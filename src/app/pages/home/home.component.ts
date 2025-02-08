@@ -10,13 +10,14 @@ import { single } from 'src/app/pages/home/data';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public olympics$: Observable<OlympicCountry[] | null> = of(null); // added type
+  public olympics$: Observable<OlympicCountry[] | null> = of(null); // observable for raw data
+  public pieChartData$: Observable<{ name: string; value: number }[]> = of([]); // observable for pie chart data
 
   // configuration for ngx-charts
   single: any[] = [];
   view: [number, number] = [700, 400];
 
-  // options
+  // options for ngx-charts
   gradient: boolean = false;
   showLegend: boolean = false;
   showLabels: boolean = true;
