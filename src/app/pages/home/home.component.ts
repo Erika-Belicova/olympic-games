@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { OlympicCountry } from 'src/app/core/models/Olympic';
+import { Participation } from 'src/app/core/models/Participation';
 import { single } from 'src/app/pages/home/data';
+import { map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -31,8 +34,32 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
+    this.fetchData();
   }
-  
+
+  // fetch data for pie chart
+  fetchData(): void {
+    this.pieChartData$ = this.olympicService.loadInitialData().pipe(
+      map((data) => 
+        data 
+          ? data.map((country) => ({
+              name: country.country,
+              value: this.calculateMedals(country.participations),
+          }))
+          : [] // return empty array if data is null
+      ),
+      catchError((error) => {
+        console.error('Error while fetching data:', error);
+        return of([]); // return empty array in case of error
+      })
+    );
+  }
+
+  // sum of medals per country
+  private calculateMedals(participations: Participation[]): number {
+    return participations.reduce((total, participation) => total + participation.medalsCount, 0);
+  }
+
   onSelect(data: { name: string, value: number }): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
