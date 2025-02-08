@@ -32,15 +32,15 @@ export class HomeComponent implements OnInit {
     this.olympics$ = this.olympicService.getOlympics();
   }
   
-  onSelect(data: any): void {
+  onSelect(data: { name: string, value: number }): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
-  onActivate(data: any): void {
+  onActivate(data: { name: string, value: number }): void {
     console.log('Activate', JSON.parse(JSON.stringify(data)));
   }
 
-  onDeactivate(data: any): void {
+  onDeactivate(data: { name: string, value: number }): void {
     console.log('Deactivate', JSON.parse(JSON.stringify(data)));
   }
 }
