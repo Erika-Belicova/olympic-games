@@ -1,18 +1,25 @@
-<h2>Medals per Country</h2>
-<hr />
-<p>Number of JOs</p>
-<p>{{ (numberOfJOs$ | async) }}</p>
-<p>Number of countries</p>
-<p>{{ (olympics$ | async)?.length }}</p>
-<div class="pie-chart-container">
-  <ngx-charts-pie-chart
-  [view]="view"
-  [scheme]="colorScheme"
-  [results]="pieChartData$ | async"
-  [labels]="showLabels"
-  (select)="onSelect($event)"
-  (activate)="onActivate($event)"
-  (deactivate)="onDeactivate($event)"
-  >
-  </ngx-charts-pie-chart>
+<div class="dashboard">
+  <h2>Medals per Country</h2>
+  <div class="flex-container">
+    <div class="information-container">
+      <p>Number of JOs</p>
+      <p>{{ (numberOfJOs$ | async) }}</p>
+    </div>
+    <div class="information-container">
+      <p>Number of countries</p>
+      <p>{{ (olympics$ | async)?.length }}</p>
+    </div>
+  </div>
+  <div class="pie-chart-container">
+    <ngx-charts-pie-chart
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="pieChartData$ | async"
+    [labels]="showLabels"
+    (select)="onSelect($event)"
+    (activate)="onActivate($event)"
+    (deactivate)="onDeactivate($event)"
+    >
+    </ngx-charts-pie-chart>
+  </div>
 </div>
