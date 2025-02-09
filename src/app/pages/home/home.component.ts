@@ -30,7 +30,27 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
+    this.fetchNumberOfJOs();
     this.fetchData();
+  }
+
+  // fetch number of JOs
+  fetchNumberOfJOs(): void {
+    this.numberOfJOs$ = this.olympicService.loadInitialData().pipe(
+      map((data: OlympicCountry[] | null) => {
+        return this.getUniqueYearsOfJOs(data);
+      }),
+      catchError((error) => {
+        console.error('Error while fetching data:', error);
+        return of(0); // return 0 in case of error
+      })
+    );
+  }
+
+  private getUniqueYearsOfJOs(data: OlympicCountry[] | null): number {
+    if (!data) return 0; // return 0 if no data
+    const yearsOfAllJOs = data.flatMap((country) => country.participations.map((participation) => participation.year));
+    return new Set(yearsOfAllJOs).size; // provides the number of unique years of all JOs
   }
 
   // fetch data for pie chart
