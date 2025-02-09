@@ -11,6 +11,7 @@ import { map, catchError } from 'rxjs/operators';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  public numberOfJOs$: Observable<number> = of(0); // observable for number of JOs
   public olympics$: Observable<OlympicCountry[] | null> = of(null); // observable for raw data
   public pieChartData$: Observable<{ name: string; value: number }[]> = of([]); // observable for pie chart data
 
@@ -35,7 +36,7 @@ export class HomeComponent implements OnInit {
   // fetch data for pie chart
   fetchData(): void {
     this.pieChartData$ = this.olympicService.loadInitialData().pipe(
-      map((data) => 
+      map((data: OlympicCountry[] | null) => 
         data 
           ? data.map((country) => ({
               name: country.country,
