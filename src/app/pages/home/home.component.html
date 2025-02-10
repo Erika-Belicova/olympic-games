@@ -1,25 +1,27 @@
-<div class="dashboard">
-  <h2>Medals per Country</h2>
-  <div class="flex-container">
-    <div class="information-container">
-      <p>Number of JOs</p>
-      <p>{{ (numberOfJOs$ | async) }}</p>
+<div class="container">
+  <div class="dashboard">
+    <h2>Medals per Country</h2>
+    <div class="flex-container">
+      <div class="information-container">
+        <h3>Number of JOs</h3>
+        <p>{{ (numberOfJOs$ | async) }}</p>
+      </div>
+      <div class="information-container">
+        <h3>Number of countries</h3>
+        <p>{{ (olympics$ | async)?.length }}</p>
+      </div>
     </div>
-    <div class="information-container">
-      <p>Number of countries</p>
-      <p>{{ (olympics$ | async)?.length }}</p>
+    <div class="pie-chart-container">
+      <ngx-charts-pie-chart
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="pieChartData$ | async"
+      [labels]="showLabels"
+      (select)="onSelect($event)"
+      (activate)="onActivate($event)"
+      (deactivate)="onDeactivate($event)"
+      >
+      </ngx-charts-pie-chart>
     </div>
-  </div>
-  <div class="pie-chart-container">
-    <ngx-charts-pie-chart
-    [view]="view"
-    [scheme]="colorScheme"
-    [results]="pieChartData$ | async"
-    [labels]="showLabels"
-    (select)="onSelect($event)"
-    (activate)="onActivate($event)"
-    (deactivate)="onDeactivate($event)"
-    >
-    </ngx-charts-pie-chart>
   </div>
 </div>
