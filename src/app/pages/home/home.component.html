@@ -13,10 +13,11 @@
     </div>
     <div class="pie-chart-container">
       <ngx-charts-pie-chart
-      [view]="view"
       [scheme]="colorScheme"
       [results]="pieChartData$ | async"
       [labels]="showLabels"
+      [animations]="false"
+      [maxLabelLength]="15"
       (select)="onSelect($event)"
       (activate)="onActivate($event)"
       (deactivate)="onDeactivate($event)"

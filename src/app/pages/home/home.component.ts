@@ -14,15 +14,14 @@ export class HomeComponent implements OnInit {
   public pieChartData$: Observable<{ name: string; value: number }[] | null> = of([]); // observable for pie chart data
 
   // configuration for ngx-charts
-  view: [number, number] = [700, 400];
-
-  // options for ngx-charts
   gradient: boolean = false;
   showLegend: boolean = false;
   showLabels: boolean = true;
   isDoughnut: boolean = false;
   legendPosition: string = 'below';
   colorScheme: string = 'cool';
+  maxLabelLength: string = '15';
+  animations: boolean = false;
 
   constructor(private olympicService: OlympicService) {}
 
