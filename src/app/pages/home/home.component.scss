@@ -49,7 +49,7 @@ h2 {
 
   h3 {
     color: #9F9F9F;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.25rem;
     padding: 0;
     margin: 0;
@@ -80,6 +80,25 @@ h2 {
   font-size: 1.5rem !important;
   //transform: translateX(10px) !important; 
   line-height: 1.5;
+}
+
+::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+  background-color: #04838F !important;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.25rem !important;
+  padding: 0px 8px !important;
+  font-weight: 100;
+  min-width: 80px;
+  height: 4rem;
+  border-radius: 6px;
+}
+
+::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+  border-top-width: 16px !important;
+  border-left-width: 16px !important;
+  border-right-width: 16px !important;
+  border-top-color: #04838F !important;
 }
 
 // mobile portrait
@@ -129,6 +148,19 @@ h2 {
   ::ng-deep .pie-label {
     font-size: 1rem !important;
   }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    min-width: 60px;
+    height: 3.5rem;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
+  }
 }
 
 // mobile landscape
@@ -142,7 +174,7 @@ h2 {
   }
   
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     margin: 0px auto 15px auto;
   }
   
@@ -151,7 +183,7 @@ h2 {
   }
   
   .information-container {
-    min-height: 2.6rem;
+    min-height: 2.6rem !important;
   
     h3 {
       font-size: 1rem;
@@ -163,14 +195,28 @@ h2 {
   }
   
   .pie-chart-container {
-    height: 30vh;
-    width: 30vw;
-    max-width: 30vw;
+    height: 40vh;
+    width: 50vw;
+    max-width: 50vw;
     max-height: 60vh;
+    margin-top: 0px !important;
   }
 
   ::ng-deep .pie-label {
     font-size: 1.2rem;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    min-width: 60px;
+    height: 4rem !important;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
   }
 }
 
@@ -210,6 +256,19 @@ h2 {
 
   ::ng-deep .pie-label {
     font-size: 1.6rem;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.5rem !important;
+    line-height: 1.4;
+    min-width: 80px;
+    height: 4.8rem;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px;
+    border-left-width: 12px;
+    border-right-width: 12px;
   }
 }
 
@@ -256,6 +315,13 @@ h2 {
 
   ::ng-deep .pie-label {
     font-size: 1.6rem;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.25rem !important;
+    line-height: 1.4;
+    min-width: 80px;
+    height: 4.8rem;
   }
 }
 
@@ -304,6 +370,12 @@ h2 {
   ::ng-deep .pie-label {
     font-size: 2.4rem !important;
   }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 2rem !important;
+    min-width: 80px !important;
+    height: 6rem;
+  }
 }
 
 // large desktop
@@ -350,5 +422,18 @@ h2 {
 
   ::ng-deep .pie-label {
     font-size: 2.8rem;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 2rem;
+    line-height: 1.4;
+    min-width: 160px !important;
+    height: 6rem;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 24px;
+    border-left-width: 24px;
+    border-right-width: 24px;
   }
 }
