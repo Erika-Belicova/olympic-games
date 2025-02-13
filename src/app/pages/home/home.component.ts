@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { OlympicCountry } from 'src/app/core/models/Olympic';
+import { faAward } from '@fortawesome/free-solid-svg-icons'; 
 
 @Component({
   selector: 'app-home',
@@ -22,6 +23,8 @@ export class HomeComponent implements OnInit {
   colorScheme: string = 'cool';
   maxLabelLength: string = '15';
   animations: boolean = false;
+
+  medalIcon = faAward; // medal icon from awesome fonts
 
   constructor(private olympicService: OlympicService) {}
 
