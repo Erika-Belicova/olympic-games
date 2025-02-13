@@ -37,12 +37,4 @@ export class HomeComponent implements OnInit {
   onSelect(data: { name: string, value: number }): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
-
-  onActivate(data: { name: string, value: number }): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data: { name: string, value: number }): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
-  }
 }
