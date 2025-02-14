@@ -1,1 +1,33 @@
-<p>detail works!</p>
+<div class="container">
+  <div class="detail">
+    <h2>Name of the Country</h2>
+    <div class="flex-container">
+      <div class="info-container">
+        <h3>Number of entries</h3>
+        <p>entries</p>
+      </div>
+      <div class="info-container">
+        <h3>Total number medals</h3>
+        <p>medals</p>
+      </div>
+      <div class="info-container">
+        <h3>Total number of athletes</h3>
+        <p>athletes</p>
+      </div>
+    </div>
+    <div class="line-chart-container">
+      <ngx-charts-line-chart
+      [legend]="legend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxis]="xAxis"
+      [yAxis]="yAxis"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [timeline]="timeline"
+      >
+      </ngx-charts-line-chart>
+    </div>
+    <button [routerLink]="''">BACK</button>
+  </div>
+</div>
