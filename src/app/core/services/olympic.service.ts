@@ -73,4 +73,42 @@ export class OlympicService {
   private calculateMedals(participations: Participation[]): number {
     return participations.reduce((total, participation) => total + participation.medalsCount, 0);
   }
+
+  // get number of entries for the country
+  getNumberOfEntries(countryName: string) {
+    return this.olympics$.asObservable().pipe(
+      map((data: OlympicCountry[] | null) => {
+        return this.getParticipationsOfCountry(data, countryName);
+      }),
+      catchError((error) => {
+        console.error('Error while fetching data:', error);
+        return of(0); // return 0 in case of error
+      })
+    );
+  }
+
+  private getParticipationsOfCountry(data: OlympicCountry[] | null, countryName: string): number {
+    if (!data || !countryName) return 0; // return 0 if no data
+    const country = data.find((country) => country.country === countryName); // find the country
+    return country ? country.participations.length : 0; // count the number of participations present
+  }
+
+  // get number of medals for the country
+  getNumberOfMedals(countryName: string) {
+    return this.olympics$.asObservable().pipe(
+      map((data: OlympicCountry[] | null) => {
+        return this.getMedalsOfCountry(data, countryName);
+      }),
+      catchError((error) => {
+        console.error('Error while fetching data:', error);
+        return of(0); // return 0 in case of error
+      })
+    );
+  }
+
+  private getMedalsOfCountry(data: OlympicCountry[] | null, countryName: string): number {
+    if (!data || !countryName) return 0; // return 0 if no data
+    const country = data.find((country) => country.country === countryName); // find the country
+    return country ? this.calculateMedals(country.participations) : 0; // count the number medals per participation of the country
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
+import { OlympicService } from 'src/app/core/services/olympic.service';
 
 @Component({
   selector: 'app-detail',
@@ -32,9 +33,12 @@ export class DetailComponent implements OnInit {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, 
+              private olympicService: OlympicService) {}
 
   ngOnInit(): void {
     this.countryName = this.route.snapshot.params['name'];
+    this.numberOfEntries$ = this.olympicService.getNumberOfEntries(this.countryName);
+    this.numberOfMedals$ = this.olympicService.getNumberOfMedals(this.countryName);
   }
 }
