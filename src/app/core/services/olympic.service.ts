@@ -111,4 +111,24 @@ export class OlympicService {
     const country = data.find((country) => country.country === countryName); // find the country
     return country ? this.calculateMedals(country.participations) : 0; // count the number medals per participation of the country
   }
+
+    // get number of athletes for the country
+    getNumberOfAthletes(countryName: string) {
+      return this.olympics$.asObservable().pipe(
+        map((data: OlympicCountry[] | null) => {
+          return this.getAthletesOfCountry(data, countryName);
+        }),
+        catchError((error) => {
+          console.error('Error while fetching data:', error);
+          return of(0); // return 0 in case of error
+        })
+      );
+    }
+
+    private getAthletesOfCountry(data: OlympicCountry[] | null, countryName: string): number {
+      if (!data || !countryName) return 0; // return 0 if no data
+      const country = data.find((country) => country.country === countryName); // find the country
+      // sum up the total number of athletes from each participation of the country
+      return country ? country.participations.reduce((total, participation) => total + participation.athleteCount, 0) : 0;
+    }
 }
