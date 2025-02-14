@@ -1,22 +1,23 @@
 <div class="container">
   <div class="detail">
-    <h2>Name of the Country</h2>
+    <h2>{{ countryName }}</h2>
     <div class="flex-container">
       <div class="info-container">
         <h3>Number of entries</h3>
-        <p>entries</p>
+        <p>{{ (numberOfEntries$ | async) }}</p>
       </div>
       <div class="info-container">
         <h3>Total number medals</h3>
-        <p>medals</p>
+        <p>{{ (numberOfMedals$ | async) }}</p>
       </div>
       <div class="info-container">
         <h3>Total number of athletes</h3>
-        <p>athletes</p>
+        <p>{{ (numberOfAthletes$ | async) }}</p>
       </div>
     </div>
     <div class="line-chart-container">
       <ngx-charts-line-chart
+      [results]="lineChartData$ | async"
       [legend]="legend"
       [showXAxisLabel]="showXAxisLabel"
       [showYAxisLabel]="showYAxisLabel"

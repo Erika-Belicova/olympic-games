@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-detail',
@@ -7,6 +8,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './detail.component.scss'
 })
 export class DetailComponent implements OnInit {
+  public numberOfEntries$: Observable<number> = of(0); // observable for number of entries
+  public numberOfMedals$: Observable<number> = of(0); // observable for number of medals
+  public numberOfAthletes$: Observable<number> = of(0); // observable for number of athletes
+  public lineChartData$: Observable<{ year: number; value: number }[] | null> = of([]); // observable for line chart data
 
   countryName: string = '';
 
