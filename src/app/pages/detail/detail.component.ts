@@ -17,21 +17,15 @@ export class DetailComponent implements OnInit {
   countryName: string = '';
 
   // configuration for line chart
-  legend: boolean = false;
   showLabels: boolean = true;
-  animations: boolean = true;
+  animations: boolean = false;
   xAxis: boolean = true;
   yAxis: boolean = true;
   showYAxisLabel: boolean = true;
   showXAxisLabel: boolean = true;
   xAxisLabel: string = 'Dates';
-  yAxisLabel: string = 'Medals';
-  timeline: boolean = true;
-  //colorScheme: string = 'cool';
-
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
-  };
+  timeline: boolean = false;
+  colorScheme: string = 'cool';
 
   constructor(private route: ActivatedRoute, 
               private olympicService: OlympicService) {}
