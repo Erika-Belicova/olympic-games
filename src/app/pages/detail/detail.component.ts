@@ -12,7 +12,7 @@ export class DetailComponent implements OnInit {
   public numberOfEntries$: Observable<number> = of(0); // observable for number of entries
   public numberOfMedals$: Observable<number> = of(0); // observable for number of medals
   public numberOfAthletes$: Observable<number> = of(0); // observable for number of athletes
-  public lineChartData$: Observable<{ year: number; value: number }[] | null> = of([]); // observable for line chart data
+  public lineChartData$: Observable<{ name: string; series: { name: number; value: number; }[] }[] | null> = of([]); // observable for line chart data
 
   countryName: string = '';
 
@@ -41,5 +41,6 @@ export class DetailComponent implements OnInit {
     this.numberOfEntries$ = this.olympicService.getNumberOfEntries(this.countryName);
     this.numberOfMedals$ = this.olympicService.getNumberOfMedals(this.countryName);
     this.numberOfAthletes$ = this.olympicService.getNumberOfAthletes(this.countryName);
+    this.lineChartData$ = this.olympicService.fetchDataLineChart(this.countryName);
   }
 }

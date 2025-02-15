@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { OlympicCountry } from '../models/Olympic';
 import { Participation } from '../models/Participation';
@@ -112,23 +112,44 @@ export class OlympicService {
     return country ? this.calculateMedals(country.participations) : 0; // count the number medals per participation of the country
   }
 
-    // get number of athletes for the country
-    getNumberOfAthletes(countryName: string) {
-      return this.olympics$.asObservable().pipe(
-        map((data: OlympicCountry[] | null) => {
-          return this.getAthletesOfCountry(data, countryName);
-        }),
-        catchError((error) => {
-          console.error('Error while fetching data:', error);
-          return of(0); // return 0 in case of error
-        })
-      );
-    }
+  // get number of athletes for the country
+  getNumberOfAthletes(countryName: string) {
+    return this.olympics$.asObservable().pipe(
+      map((data: OlympicCountry[] | null) => {
+        return this.getAthletesOfCountry(data, countryName);
+      }),
+      catchError((error) => {
+        console.error('Error while fetching data:', error);
+        return of(0); // return 0 in case of error
+      })
+    );
+  }
 
-    private getAthletesOfCountry(data: OlympicCountry[] | null, countryName: string): number {
-      if (!data || !countryName) return 0; // return 0 if no data
-      const country = data.find((country) => country.country === countryName); // find the country
-      // sum up the total number of athletes from each participation of the country
-      return country ? country.participations.reduce((total, participation) => total + participation.athleteCount, 0) : 0;
-    }
+  private getAthletesOfCountry(data: OlympicCountry[] | null, countryName: string): number {
+    if (!data || !countryName) return 0; // return 0 if no data
+    const country = data.find((country) => country.country === countryName); // find the country
+    // sum up the total number of athletes from each participation of the country
+    return country ? country.participations.reduce((total, participation) => total + participation.athleteCount, 0) : 0;
+  }
+
+  // fetch data for line chart
+  fetchDataLineChart(countryName: string): Observable<{ name: string; series: { name: number; value: number }[] }[]> {
+    return this.olympics$.asObservable().pipe(
+      map((data: OlympicCountry[] | null) => { 
+        if (!data) return []; // empty array if data not found
+        const country = data.find((country) => country.country === countryName); // find the country
+        const lineChartData = country ? country.participations.map((participation) => ({
+          name: participation.year,
+          value: participation.medalsCount,
+        }))
+        : [];
+        const formattedData = country ? [{ name: country.country, series: lineChartData }] : []; // correct formatting for the line chart
+        return formattedData;
+      }),
+      catchError((error) => {
+        console.error('Error while fetching data:', error);
+        return of([]); // if error, return empty array
+      })
+    );
+  }
 }
