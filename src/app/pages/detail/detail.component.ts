@@ -27,6 +27,7 @@ export class DetailComponent implements OnInit {
   timeline: boolean = false;
   colorScheme: string = 'cool';
   trimXAxisTicks: boolean = true;
+  autoScale: boolean = false;
 
   constructor(private route: ActivatedRoute, 
               private olympicService: OlympicService) {}
