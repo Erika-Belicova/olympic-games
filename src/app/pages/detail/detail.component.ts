@@ -26,6 +26,7 @@ export class DetailComponent implements OnInit {
   xAxisLabel: string = 'Dates';
   timeline: boolean = false;
   colorScheme: string = 'cool';
+  trimXAxisTicks: boolean = true;
 
   constructor(private route: ActivatedRoute, 
               private olympicService: OlympicService) {}
@@ -36,5 +37,9 @@ export class DetailComponent implements OnInit {
     this.numberOfMedals$ = this.olympicService.getNumberOfMedals(this.countryName);
     this.numberOfAthletes$ = this.olympicService.getNumberOfAthletes(this.countryName);
     this.lineChartData$ = this.olympicService.fetchDataLineChart(this.countryName);
+  }
+
+  formatValuesToString(value: number): string {
+    return value.toString(); // format integer to string
   }
 }
