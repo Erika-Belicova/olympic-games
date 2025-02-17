@@ -1,0 +1,594 @@
+.container {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.detail {
+  background-color: #ffffff;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.25rem;
+  padding: 20px;
+}
+
+h2 {
+  display: inline-block;
+  background-color: #04838F;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 100;
+  padding: 8px 10px 12px 10px;
+  font-size: 2rem;
+  margin: 0px auto 30px auto;
+  line-height: 1; 
+  text-align: center;
+  justify-content: center; 
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;  
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #04838F;
+  text-align: center;
+  width: fit-content;
+  padding: 6px;
+  min-height: 3.5rem;
+
+  h3 {
+    color: #5B5B5B;
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  p {
+    color: #000000;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+::ng-deep .ng-star-inserted text {
+  font-size: 1.25rem !important;
+  fill: #000000;
+}
+
+.line-chart-container {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  height: 45vh;
+  max-width: 70vw;
+  max-height: 50vh;
+  min-width: 150px;
+  min-height: 150px;
+  margin: 30px auto;
+
+  h3 {
+    font-size: 1.25rem;
+    color: #5B5B5B;
+    font-weight: 300;
+  }
+}
+
+::ng-deep .line-label {
+  font-size: 1.5rem !important;
+  line-height: 1.5;
+}
+
+button {
+  display: flex;
+  margin: auto;
+  background-color: #04838F;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 100;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-align: center;
+  transition: 0.3ms;
+}
+
+button:hover {
+  display: flex;
+  background-color: #045c64;
+  font-weight: 100;
+  font-size: 1rem;
+  transition: 0.3ms;
+}
+
+// mobile portrait
+@media (max-width: 599px) {
+  .container {
+    flex-direction: column; 
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .detail {
+    padding: 0px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin: 50px auto 20px auto !important;
+    padding: 10px;
+  }
+  
+  .flex-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .info-container {
+    min-height: 3rem;
+  
+    h3 {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+  
+    p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+  }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1rem !important;
+  }
+  
+  .line-chart-container {
+    height: 30vh;
+    max-width: 95vw;
+    max-height: 80vh;
+
+    h3 {
+      font-size: 1.25rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+    }
+  }
+
+  .line-label {
+    font-size: 1rem !important;
+  }
+
+  button {
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    height: 48px;
+  }
+  
+  button:hover {
+    font-size: 1rem;
+  }
+}
+
+// mobile landscape
+@media (max-height: 599px) and (min-width: 600px) and (orientation: landscape) {
+  .container {
+    flex: auto;
+    overflow: hidden !important;
+    max-height: 100% !important;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .detail {
+    padding: 0px;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+    margin: -5px auto 10px auto !important;
+  }
+  
+  .flex-container {
+    gap: 15px;
+  }
+  
+  .info-container {
+    min-height: 2.6rem !important;
+  
+    h3 {
+      font-size: 1rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1rem !important;
+  }
+  
+  .line-chart-container {
+    display: inline-block;
+    height: 30vh;
+    width: 60vw;
+    max-width: 70vw;
+    max-height: 50vh;
+    margin: 10px auto 0px auto;
+
+    h3 {
+      display: none !important;
+    }
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    min-width: 60px;
+    height: 3.8rem !important;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
+  }
+
+  button {
+    border-radius: 10px;
+    padding: 14px 20px;
+    font-size: 1rem;
+    height: 48px;
+    overflow: hidden;
+  }
+  
+  button:hover {
+    font-size: 1rem;
+  }
+}
+
+// tablet portrait
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) {
+  .container {
+    height: 100%;
+  }
+  
+  h2 {
+    padding: 8px 10px 16px 10px;
+    font-size: 2.5rem;
+    margin: 25px;
+  }
+  
+  .flex-container {
+    gap: 30px;
+  }
+
+  .info-container {
+    min-height: 4rem !important;
+    border-width: 2px;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
+  
+  .line-chart-container {
+    display: inline-block;
+    height: 30vh;
+    width: 70vw;
+    max-height: 70vh;
+    max-width: 80vw;
+    margin: 2.5rem auto;
+
+    h3 {
+      font-size: 2rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+  }
+
+  .line-label-line {
+    stroke-width: 2px;
+  }
+
+  button {
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 16px 30px;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  
+  button:hover {
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+}
+
+// tablet landscape
+@media (min-height: 600px) and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+  .container {
+    overflow: hidden;
+    height: 100%;
+    padding: 0px;
+  }
+  
+  .detail {
+    padding: 0px;
+  }
+  
+  h2 {
+    padding: 8px 10px 16px 10px;
+    font-size: 2rem;
+  }
+  
+  .flex-container {
+    gap: 20px; 
+  }
+
+  .info-container {
+    min-height: 3rem;
+    border-width: 2px;
+  
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  
+    p {
+      font-size: 1.25rem;
+      line-height: 1.4;
+    }
+  }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
+  
+  .line-chart-container {
+    width: 55vw;
+    height: 40vh;
+    max-width: 70vw;
+    max-height: 80vh;
+    margin: 2rem auto;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+  }
+
+  ::ng-deep .line-label {
+    font-size: 1.6rem;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.25rem !important;
+    line-height: 1.4;
+    min-width: 100px;
+    height: 3.8rem;
+  }
+
+  ::ng-deep .line-label-line {
+    stroke-width: 2px;
+  }
+
+  button {
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 20px 40px;
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
+  
+  button:hover {
+    font-size: 1.25rem;
+    font-weight: 100;
+  }
+}
+
+// desktop
+@media (min-width: 1025px) and (max-width: 1599px) {
+  .container {
+    padding: 0px;
+    height: 100%;
+  }
+
+  .detail {
+    padding: 0px;
+  }
+  
+  h2 {
+    padding: 8px 10px 20px 10px;
+    font-size: 3rem;
+    margin: 40px;
+  }
+  
+  .flex-container {
+    gap: 40px;
+  }
+  
+  .info-container {
+    min-height: 5.5rem;
+    padding: 10px 20px;
+    border-width: 3px;
+  
+    h3 {
+      font-size: 2rem;
+    }
+  
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
+  
+  .line-chart-container {
+    width: 70vw;
+    height: 40vh;
+    max-width: 70vw;
+    max-height: 70vh;
+    margin: 3rem auto;
+
+    h3 {
+      font-size: 2.5rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
+  }
+
+  ::ng-deep .line-label {
+    font-size: 2.4rem !important;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 2rem !important;
+    min-width: 150px !important;
+    height: 5.6rem;
+  }
+
+  ::ng-deep .line-label-line {
+    stroke-width: 3px;
+  }
+
+  button {
+    margin: 30px auto;
+    border-radius: 10px;
+    padding: 16px 30px;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  
+  button:hover {
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+}
+
+// large desktop
+@media (min-width: 1600px) {
+  .container {
+    padding: 0px;
+    height: 100%;
+  }
+
+  .detail {
+    padding: 0px;
+  }
+  
+  h2 {
+    padding: 8px 10px 20px 10px;
+    font-size: 3.5rem;
+    margin: 40px;
+  }
+  
+  .flex-container {
+    gap: 60px;
+  }
+  
+  .info-container {
+    min-height: 6.5rem;
+    padding: 10px 20px;
+    border-width: 4px;
+  
+    h3 {
+      font-size: 2.5rem;
+    }
+  
+    p {
+      font-size: 2.5rem;
+    }
+  }
+  
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
+
+  .line-chart-container {
+    width: 60vw;
+    height: 45vh;
+    max-width: 70vw;
+    max-height: 60vh;
+    margin: 3.5rem auto;
+
+    h3 {
+      font-size: 3rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+      justify-content: center;
+    }
+  }
+
+  ::ng-deep .line-label {
+    font-size: 2.8rem;
+  }
+
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 2rem;
+    line-height: 1.4;
+    min-width: 160px !important;
+    height: 6rem;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 24px;
+    border-left-width: 24px;
+    border-right-width: 24px;
+  }
+
+  ::ng-deep .line-label-line {
+    stroke-width: 3px;
+  }
+
+  button {
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+    padding: 16px 30px;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+  
+  button:hover {
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+}

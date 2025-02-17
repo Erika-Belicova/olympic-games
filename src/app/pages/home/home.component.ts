@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { OlympicCountry } from 'src/app/core/models/Olympic';
 import { faAward } from '@fortawesome/free-solid-svg-icons'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +27,8 @@ export class HomeComponent implements OnInit {
 
   medalIcon = faAward; // medal icon from awesome fonts
 
-  constructor(private olympicService: OlympicService) {}
+  constructor(private olympicService: OlympicService, 
+              private router: Router) {}
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
@@ -36,13 +38,7 @@ export class HomeComponent implements OnInit {
 
   onSelect(data: { name: string, value: number }): void {
     console.log('Item clicked', JSON.parse(JSON.stringify(data)));
-  }
-
-  onActivate(data: { name: string, value: number }): void {
-    console.log('Activate', JSON.parse(JSON.stringify(data)));
-  }
-
-  onDeactivate(data: { name: string, value: number }): void {
-    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+    // on click the country name is used as a route paramter to navigate to detail page
+    this.router.navigateByUrl(`detail/${data.name}`);
   }
 }

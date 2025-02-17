@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="detail">
+    <h2>{{ countryName }}</h2>
+    <div class="flex-container">
+      <div class="info-container">
+        <h3>Number of entries</h3>
+        <p>{{ (numberOfEntries$ | async) }}</p>
+      </div>
+      <div class="info-container">
+        <h3>Total number medals</h3>
+        <p>{{ (numberOfMedals$ | async) }}</p>
+      </div>
+      <div class="info-container">
+        <h3>Total number of athletes</h3>
+        <p>{{ (numberOfAthletes$ | async) }}</p>
+      </div>
+    </div>
+    <div class="line-chart-container">
+      <ngx-charts-line-chart
+      *ngIf="(lineChartData$ | async)?.length !== 0"
+      [trimXAxisTicks]="true"
+      [animations]="false"
+      [scheme]="'cool'"
+      [xAxis]="true"
+      [yAxis]="true"
+      [autoScale]="true"
+      [xAxisTickFormatting]="formatValuesToString"
+      [yAxisTickFormatting]="formatValuesToString"
+      [results]="lineChartData$ | async"
+      [rotateXAxisTicks]="true"
+      [tooltipDisabled]="true"
+      >
+      </ngx-charts-line-chart>
+      <h3>Dates</h3>
+    </div>
+    <button [routerLink]="''">BACK</button>
+  </div>
+</div>
