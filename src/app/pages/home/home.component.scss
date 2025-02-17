@@ -48,7 +48,7 @@ h2 {
   min-height: 3.5rem;
 
   h3 {
-    color: #9F9F9F;
+    color: #5B5B5B;
     font-weight: 400;
     font-size: 1.25rem;
     padding: 0;
@@ -78,7 +78,6 @@ h2 {
 
 ::ng-deep .pie-label {
   font-size: 1.5rem !important;
-  //transform: translateX(10px) !important; 
   line-height: 1.5;
 }
 
@@ -113,7 +112,7 @@ fa-icon {
 }
 
 // mobile portrait
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .container {
     flex-direction: column; 
     padding: 0;
@@ -175,7 +174,7 @@ fa-icon {
 }
 
 // mobile landscape
-@media (min-width: 601px) and (max-width: 800px) and (orientation: landscape) {
+@media (max-height: 599px) and (min-width: 600px) and (orientation: landscape) {
   .container {
     flex-direction: column; 
     padding: 0px;
@@ -206,7 +205,7 @@ fa-icon {
   }
   
   .pie-chart-container {
-    height: 40vh;
+    height: 60vh;
     width: 50vw;
     max-width: 50vw;
     max-height: 60vh;
@@ -214,15 +213,15 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1rem !important;
-    line-height: 1.4;
+    font-size: 1.2rem !important;
+    line-height: 1.5;
     min-width: 60px;
     height: 3.8rem !important;
-  }
+    }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
     border-top-width: 12px !important;
@@ -232,7 +231,7 @@ fa-icon {
 }
 
 // tablet portrait
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) {
   .container {
     height: 100%;
   }
@@ -267,7 +266,7 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.6rem;
+    font-size: 1.8rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
@@ -289,7 +288,7 @@ fa-icon {
 }
 
 // tablet landscape
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-height: 600px) and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
   .container {
     overflow: hidden;
     height: 100%;
@@ -325,20 +324,22 @@ fa-icon {
   }
   
   .pie-chart-container {
-    max-width: 80vw;
-    max-height: 50vh;
+    height: 60vh;
+    width: 60vw;
+    max-width: 70vw;
+    max-height: 70vh;
     margin-top: 20px;
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 1.25rem !important;
-    line-height: 1.4;
+    line-height: 1.5;
     min-width: 100px;
-    height: 3.8rem;
+    height: 3.9rem;
   }
 
   ::ng-deep .pie-label-line {
@@ -347,7 +348,7 @@ fa-icon {
 }
 
 // desktop
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1599px) {
   .container {
     padding: 0px;
     height: 100%;
@@ -370,7 +371,7 @@ fa-icon {
   .information-container {
     min-height: 5.5rem;
     padding: 10px 20px;
-    border-width: 4px;
+    border-width: 3px;
   
     h3 {
       font-size: 2rem;
@@ -395,8 +396,9 @@ fa-icon {
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 2rem !important;
+    line-height: 1.4;
     min-width: 150px !important;
-    height: 5.6rem;
+    height: 5.8rem;
   }
 
   ::ng-deep .pie-label-line {
@@ -428,7 +430,7 @@ fa-icon {
   .information-container {
     min-height: 6.5rem;
     padding: 10px 20px;
-    border-width: 4px;
+    border-width: 3px;
   
     h3 {
       font-size: 2.5rem;
@@ -448,14 +450,13 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 2.8rem;
+    font-size: 2.8rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 2rem;
-    line-height: 1.4;
-    min-width: 160px !important;
-    height: 6rem;
+    font-size: 2.5rem !important;
+    min-width: 170px !important;
+    height: 7rem;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
