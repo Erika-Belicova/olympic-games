@@ -78,7 +78,6 @@ h2 {
 
 ::ng-deep .pie-label {
   font-size: 1.5rem !important;
-  //transform: translateX(10px) !important; 
   line-height: 1.5;
 }
 
@@ -214,15 +213,15 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1rem !important;
-    line-height: 1.4;
+    font-size: 1.2rem !important;
+    line-height: 1.5;
     min-width: 60px;
     height: 3.8rem !important;
-  }
+    }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
     border-top-width: 12px !important;
@@ -267,7 +266,7 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.6rem;
+    font-size: 1.8rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
@@ -333,14 +332,14 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 1.25rem !important;
-    line-height: 1.4;
+    line-height: 1.5;
     min-width: 100px;
-    height: 3.8rem;
+    height: 3.9rem;
   }
 
   ::ng-deep .pie-label-line {
@@ -372,7 +371,7 @@ fa-icon {
   .information-container {
     min-height: 5.5rem;
     padding: 10px 20px;
-    border-width: 4px;
+    border-width: 3px;
   
     h3 {
       font-size: 2rem;
@@ -397,8 +396,9 @@ fa-icon {
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 2rem !important;
+    line-height: 1.4;
     min-width: 150px !important;
-    height: 5.6rem;
+    height: 5.8rem;
   }
 
   ::ng-deep .pie-label-line {
@@ -430,7 +430,7 @@ fa-icon {
   .information-container {
     min-height: 6.5rem;
     padding: 10px 20px;
-    border-width: 4px;
+    border-width: 3px;
   
     h3 {
       font-size: 2.5rem;
@@ -450,14 +450,13 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 2.8rem;
+    font-size: 2.8rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 2rem;
-    line-height: 1.4;
-    min-width: 160px !important;
-    height: 6rem;
+    font-size: 2.5rem !important;
+    min-width: 170px !important;
+    height: 7rem;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
