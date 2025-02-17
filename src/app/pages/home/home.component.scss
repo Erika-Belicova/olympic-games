@@ -48,7 +48,7 @@ h2 {
   min-height: 3.5rem;
 
   h3 {
-    color: #9F9F9F;
+    color: #5B5B5B;
     font-weight: 400;
     font-size: 1.25rem;
     padding: 0;
@@ -113,7 +113,7 @@ fa-icon {
 }
 
 // mobile portrait
-@media (max-width: 600px) {
+@media (max-width: 599px) {
   .container {
     flex-direction: column; 
     padding: 0;
@@ -175,7 +175,7 @@ fa-icon {
 }
 
 // mobile landscape
-@media (min-width: 601px) and (max-width: 800px) and (orientation: landscape) {
+@media (max-height: 599px) and (min-width: 600px) and (orientation: landscape) {
   .container {
     flex-direction: column; 
     padding: 0px;
@@ -232,7 +232,7 @@ fa-icon {
 }
 
 // tablet portrait
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) {
   .container {
     height: 100%;
   }
@@ -289,7 +289,7 @@ fa-icon {
 }
 
 // tablet landscape
-@media (min-width: 601px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-height: 600px) and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
   .container {
     overflow: hidden;
     height: 100%;
@@ -347,7 +347,7 @@ fa-icon {
 }
 
 // desktop
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1599px) {
   .container {
     padding: 0px;
     height: 100%;
