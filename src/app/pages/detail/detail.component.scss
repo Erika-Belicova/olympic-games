@@ -68,7 +68,6 @@ h2 {
 ::ng-deep .ng-star-inserted text {
   font-size: 1.25rem !important;
   fill: #000000;
-  //fill: #5B5B5B;
 }
 
 .line-chart-container {
@@ -82,32 +81,17 @@ h2 {
   min-width: 150px;
   min-height: 150px;
   margin: 30px auto;
+
+  h3 {
+    font-size: 1.25rem;
+    color: #5B5B5B;
+    font-weight: 300;
+  }
 }
 
 ::ng-deep .line-label {
   font-size: 1.5rem !important;
   line-height: 1.5;
-}
-
-::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-  color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 1.25rem !important;
-  padding: 0px 8px !important;
-  font-weight: 100;
-  line-height: 1.4;
-  min-width: 80px;
-  height: 4.5rem;
-  border-radius: 6px;
-  border-top-color: #04838F !important;
-  background-color: #04838F !important;
-}
-
-::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret {
-  border-top-color: #04838F !important;
-  border-top-width: 12px !important;
-  border-left-width: 12px !important;
-  border-right-width: 12px !important;
 }
 
 button {
@@ -169,18 +153,30 @@ button:hover {
       line-height: 1.4;
     }
   }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1rem !important;
+  }
   
   .line-chart-container {
     height: 30vh;
     max-width: 95vw;
     max-height: 80vh;
+
+    h3 {
+      font-size: 1.25rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+    }
   }
 
-  ::ng-deep .line-label {
+  .line-label {
     font-size: 1rem !important;
   }
 
   button {
+    margin: 20px auto 0px auto;
     border-radius: 10px;
     padding: 14px 20px;
     font-size: 1rem;
@@ -226,6 +222,10 @@ button:hover {
       font-size: 1rem;
     }
   }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1rem !important;
+  }
   
   .line-chart-container {
     display: inline-block;
@@ -234,6 +234,10 @@ button:hover {
     max-width: 70vw;
     max-height: 50vh;
     margin: 10px auto 0px auto;
+
+    h3 {
+      display: none !important;
+    }
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
@@ -290,6 +294,10 @@ button:hover {
       font-size: 1.5rem;
     }
   }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
   
   .line-chart-container {
     display: inline-block;
@@ -298,30 +306,22 @@ button:hover {
     max-height: 70vh;
     max-width: 80vw;
     margin: 2.5rem auto;
+
+    h3 {
+      font-size: 2rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
   }
 
-  ::ng-deep .line-label {
-    font-size: 1.6rem;
-  }
-
-  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1.5rem !important;
-    line-height: 1.4;
-    min-width: 100px;
-    height: 4.5rem;
-  }
-  
-  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
-    border-top-width: 12px;
-    border-left-width: 12px;
-    border-right-width: 12px;
-  }
-
-  ::ng-deep .line-label-line {
+  .line-label-line {
     stroke-width: 2px;
   }
 
   button {
+    margin: 20px auto;
     border-radius: 10px;
     padding: 16px 30px;
     font-size: 1.5rem;
@@ -369,6 +369,10 @@ button:hover {
       line-height: 1.4;
     }
   }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
   
   .line-chart-container {
     width: 55vw;
@@ -376,6 +380,14 @@ button:hover {
     max-width: 70vw;
     max-height: 80vh;
     margin: 2rem auto;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
   }
 
   ::ng-deep .line-label {
@@ -394,6 +406,7 @@ button:hover {
   }
 
   button {
+    margin: 20px auto;
     border-radius: 10px;
     padding: 20px 40px;
     font-size: 1.25rem;
@@ -440,6 +453,10 @@ button:hover {
       font-size: 2rem;
     }
   }
+
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
   
   .line-chart-container {
     width: 70vw;
@@ -447,6 +464,14 @@ button:hover {
     max-width: 70vw;
     max-height: 70vh;
     margin: 3rem auto;
+
+    h3 {
+      font-size: 2.5rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+    }
   }
 
   ::ng-deep .line-label {
@@ -464,6 +489,7 @@ button:hover {
   }
 
   button {
+    margin: 30px auto;
     border-radius: 10px;
     padding: 16px 30px;
     font-size: 1.5rem;
@@ -511,12 +537,25 @@ button:hover {
     }
   }
   
+  ::ng-deep .ng-star-inserted text {
+    font-size: 1.25rem !important;
+  }
+
   .line-chart-container {
     width: 60vw;
     height: 45vh;
     max-width: 70vw;
     max-height: 60vh;
     margin: 3.5rem auto;
+
+    h3 {
+      font-size: 3rem;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+      justify-content: center;
+    }
   }
 
   ::ng-deep .line-label {
@@ -541,6 +580,7 @@ button:hover {
   }
 
   button {
+    margin: 20px auto 0px auto;
     border-radius: 10px;
     padding: 16px 30px;
     font-size: 1.5rem;

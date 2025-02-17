@@ -18,18 +18,20 @@
     <div class="line-chart-container">
       <ngx-charts-line-chart
       *ngIf="(lineChartData$ | async)?.length !== 0"
-      [trimXAxisTicks]="trimXAxisTicks"
+      [trimXAxisTicks]="true"
+      [animations]="false"
       [scheme]="'cool'"
-      [xAxis]="xAxis"
-      [yAxis]="yAxis"
-      [autoScale]="false"
+      [xAxis]="true"
+      [yAxis]="true"
+      [autoScale]="true"
       [xAxisTickFormatting]="formatValuesToString"
       [yAxisTickFormatting]="formatValuesToString"
       [results]="lineChartData$ | async"
       [rotateXAxisTicks]="true"
-      [yScaleMin]="15"
+      [tooltipDisabled]="true"
       >
       </ngx-charts-line-chart>
+      <h3>Dates</h3>
     </div>
     <button [routerLink]="''">BACK</button>
   </div>

@@ -17,17 +17,14 @@ export class DetailComponent implements OnInit {
   countryName: string = '';
 
   // configuration for line chart
-  showLabels: boolean = true;
   animations: boolean = false;
   xAxis: boolean = true;
   yAxis: boolean = true;
-  showYAxisLabel: boolean = true;
-  showXAxisLabel: boolean = true;
-  xAxisLabel: string = 'Dates';
   timeline: boolean = false;
   colorScheme: string = 'cool';
   trimXAxisTicks: boolean = true;
-  autoScale: boolean = false;
+  autoScale: boolean = true;
+  rotateXAxisTicks: boolean = true;
 
   constructor(private route: ActivatedRoute, 
               private olympicService: OlympicService) {}
@@ -41,6 +38,12 @@ export class DetailComponent implements OnInit {
   }
 
   formatValuesToString(value: number): string {
-    return value.toString(); // format integer to string
+    // show only ticks of the games and number of medals
+    if ( (value % 1 === 0 && value < 2000 ) || value % 4 === 0) {
+      return value.toString(); // format integer to string
+    }
+    else {
+      return '';
+    }
   }
 }
