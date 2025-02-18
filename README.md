@@ -1,29 +1,76 @@
 # OlympicGamesStarter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+A simple Angular application that displays Olympic data, such as the number of medals, athletes, and other statistics by country.
 
-Don't forget to install your node_modules before starting (`npm install`).
+## Prerequisites
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Before running the application, you need to have the following tools installed on your machine:
 
-## Build
+- Node.js (version 14 or higher)
+- Angular CLI (version 12 or higher) - npm install -g @angular/cli
+- Installing Node.js
+- If you don’t have Node.js installed yet, you can download it from the Node.js official website.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Clone the Project from GitHub
 
-## Where to start
+Open your terminal or command prompt.
+Clone the GitHub repository of the project using the following command:
 
-As you can see, an architecture has already been defined for the project. It is just a suggestion, you can choose to use your own. The predefined architecture includes (in addition to the default angular architecture) the following:
+git clone https://github.com/Erika-Belicova/Developpez-le-front-end-en-utilisant-Angular.git
+Replace your-username and repository-name with your GitHub username and the project name, respectively.
 
-- `components` folder: contains every reusable components
-- `pages` folder: contains components used for routing
-- `core` folder: contains the business logic (`services` and `models` folders)
+Navigate into the cloned project directory:
 
-I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
+cd repository-name
 
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
+## Install Dependencies
+Install the required dependencies for the application:
 
-You're now ready to implement the requested features.
+npm install
 
-Good luck!
+This will install all the necessary libraries for the application to run properly.
+
+## Running the Application
+Start the application with the following command:
+
+ng serve
+
+The application will be available at the following URL:
+http://localhost:4200
+
+## Testing the Application
+Open a web browser and go to:
+http://localhost:4200
+
+On the home page, you will see a dashboard with statistics about the countries participating in the Olympic Games.
+
+- Error: If an error occurs while loading the data, an error message will be displayed at the top of the page.
+- Loading: While the data is being fetched, a loading indicator will appear.
+
+## Pages of the Application
+
+Home Page: Displays a dashboard with general statistics about the Olympic Games, including the number of countries, JOs (Olympic Games), and a pie chart with the data.
+
+Detail Page: Shows specific information about each country, such as the number of medals, athletes, and graphical data.
+
+## Technologies and Libraries Used
+
+- Angular: JavaScript framework for building the user interface.
+- RxJS: Library for managing asynchronous data streams.
+- ngx-charts: Chart library for data visualization.
+- FontAwesome: For icons, like the medal icon.
+- MatSnackBar (Angular Material): For displaying error messages as snackbars.
+
+## Languages Used
+
+- TypeScript: The main language used for writing Angular code.
+- HTML: Used for structuring the user interface.
+- CSS / SCSS: For styling and formatting the interface.
+
+## Troubleshooting
+
+If you encounter issues while starting the application, make sure you've installed all dependencies using npm install.
+Check for any compilation errors in the console; they will provide information on the issues to resolve.
+If there’s an error, an error message will appear at the top of the page.
