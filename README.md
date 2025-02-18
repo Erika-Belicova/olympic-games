@@ -4,8 +4,6 @@ A simple Angular application that displays Olympic data, such as the number of m
 
 ## Prerequisites
 
-## Development server
-
 Before running the application, you need to have the following tools installed on your machine:
 
 - Node.js (version 14 or higher)
