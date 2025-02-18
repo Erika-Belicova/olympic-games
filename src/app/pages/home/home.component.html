@@ -1,18 +1,30 @@
 <div class="container">
   <div class="dashboard">
     <h2>Medals per Country</h2>
+    <div *ngIf="error$ | async as error" class="error-message">
+      <p>{{ error }}</p>
+    </div>
     <div class="flex-container">
       <div class="information-container">
         <h3>Number of JOs</h3>
-        <p>{{ (numberOfJOs$ | async) }}</p>
+        <p *ngIf="loading$ | async">Loading...</p>
+        <p *ngIf="!(loading$ | async) && (numberOfJOs$ | async) !== null">{{ (numberOfJOs$ | async) }}</p>
       </div>
       <div class="information-container">
         <h3>Number of countries</h3>
-        <p>{{ (olympics$ | async)?.length }}</p>
+        <p *ngIf="loading$ | async">Loading...</p>
+        <p *ngIf="!(loading$ | async) && (olympics$ | async) as olympics; else loadingCountries">
+          {{ olympics?.length }}
+        </p>
+        <ng-template #loadingCountries>
+          <p>Loading...</p>
+        </ng-template>
       </div>
     </div>
     <div class="pie-chart-container">
+      <p *ngIf="loading$ | async">Loading chart data...</p>
       <ngx-charts-pie-chart
+      *ngIf="!(loading$ | async) && (pieChartData$ | async)?.length !== 0; else noDataChart"
       [scheme]="colorScheme"
       [results]="pieChartData$ | async"
       [labels]="showLabels"
@@ -28,6 +40,9 @@
           </div>
         </ng-template>
       </ngx-charts-pie-chart>
+      <ng-template #noDataChart>
+        <p>No data available for the pie chart.</p>
+      </ng-template>
     </div>
   </div>
 </div>
