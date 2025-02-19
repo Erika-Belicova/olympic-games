@@ -77,7 +77,7 @@ h2 {
 }
 
 ::ng-deep .pie-label {
-  font-size: 1.5rem !important;
+  font-size: 1.5rem;
   line-height: 1.5;
 }
 
@@ -89,8 +89,9 @@ h2 {
   padding: 0px 8px !important;
   font-weight: 100;
   min-width: 80px;
-  height: 4rem;
-  border-radius: 6px;
+  border-radius: 10px;
+  width: auto !important;
+  height: auto !important; 
 }
 
 ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
@@ -163,7 +164,6 @@ fa-icon {
     font-size: 1rem !important;
     line-height: 1.4;
     min-width: 60px;
-    height: 3rem;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
@@ -174,7 +174,7 @@ fa-icon {
 }
 
 // mobile landscape
-@media (max-height: 599px) and (min-width: 600px) and (orientation: landscape) {
+@media (max-height: 529px) and (min-width: 530px) and (orientation: landscape) {
   .container {
     flex-direction: column; 
     padding: 0px;
@@ -220,8 +220,7 @@ fa-icon {
     font-size: 1.2rem !important;
     line-height: 1.5;
     min-width: 60px;
-    height: 3.8rem !important;
-    }
+  }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
     border-top-width: 12px !important;
@@ -231,14 +230,14 @@ fa-icon {
 }
 
 // tablet portrait
-@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) {
+@media (min-width: 529px) and (min-height: 530px) {
   .container {
     height: 100%;
   }
   
   h2 {
     padding: 8px 10px 16px 10px;
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
     margin: 25px;
   }
   
@@ -251,11 +250,11 @@ fa-icon {
     border-width: 2px;
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.5rem !important;
     }
   
     p {
-      font-size: 1.5rem;
+      font-size: 1.5rem !important;
     }
   }
   
@@ -273,7 +272,7 @@ fa-icon {
     font-size: 1.5rem !important;
     line-height: 1.4;
     min-width: 100px;
-    height: 4.5rem;
+    min-height: 60px !important;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
@@ -288,11 +287,9 @@ fa-icon {
 }
 
 // tablet landscape
-@media (min-height: 600px) and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-height: 530px) and (min-width: 768px) and (orientation: landscape) {
   .container {
-    overflow: hidden;
     height: 100%;
-    padding: 0px;
   }
   
   .dashboard {
@@ -300,25 +297,26 @@ fa-icon {
   }
   
   h2 {
+    margin: 20px !important;
     padding: 8px 10px 16px 10px;
-    font-size: 2rem;
+    font-size: 2.5rem !important;
   }
   
   .flex-container {
-    gap: 50px; 
+    gap: 50px;
   }
 
   .information-container {
-    min-height: 3rem;
+    min-height: 4rem !important;
     border-width: 2px;
   
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem !important;
       line-height: 1.4;
     }
   
     p {
-      font-size: 1.25rem;
+      font-size: 1.5rem !important;
       line-height: 1.4;
     }
   }
@@ -328,18 +326,18 @@ fa-icon {
     width: 60vw;
     max-width: 70vw;
     max-height: 70vh;
-    margin-top: 20px;
+    margin-top: 10px !important;
   }
 
   ::ng-deep .pie-label {
-    font-size: 1.6rem !important;
+    font-size: 1.8rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1.25rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.5;
     min-width: 100px;
-    height: 3.9rem;
+    min-height: 4.5rem !important;
   }
 
   ::ng-deep .pie-label-line {
@@ -348,7 +346,7 @@ fa-icon {
 }
 
 // desktop
-@media (min-width: 1025px) and (max-width: 1599px) {
+@media (min-width: 1280px) and (max-width: 1599px) and (min-height: 768px) {
   .container {
     padding: 0px;
     height: 100%;
@@ -360,8 +358,8 @@ fa-icon {
   
   h2 {
     padding: 8px 10px 20px 10px;
-    font-size: 3rem;
-    margin: 40px;
+    font-size: 3rem !important;
+    margin: 40px !important;
   }
   
   .flex-container {
@@ -374,11 +372,11 @@ fa-icon {
     border-width: 3px;
   
     h3 {
-      font-size: 2rem;
+      font-size: 2rem !important;
     }
   
     p {
-      font-size: 2rem;
+      font-size: 2rem !important;
     }
   }
   
@@ -391,14 +389,13 @@ fa-icon {
   }
 
   ::ng-deep .pie-label {
-    font-size: 2.4rem !important;
+    font-size: 2.2rem !important;
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 2rem !important;
     line-height: 1.4;
     min-width: 150px !important;
-    height: 5.8rem;
   }
 
   ::ng-deep .pie-label-line {
@@ -407,7 +404,7 @@ fa-icon {
 }
 
 // large desktop
-@media (min-width: 1600px) {
+@media (min-width: 1600px) and (min-height: 768px) {
   .container {
     padding: 0px;
     height: 100%;
@@ -419,8 +416,8 @@ fa-icon {
   
   h2 {
     padding: 8px 10px 20px 10px;
-    font-size: 3.5rem;
-    margin: 40px;
+    font-size: 3.5rem !important;
+    margin: 40px !important;
   }
   
   .flex-container {
@@ -433,11 +430,11 @@ fa-icon {
     border-width: 3px;
   
     h3 {
-      font-size: 2.5rem;
+      font-size: 2.5rem !important;
     }
   
     p {
-      font-size: 2.5rem;
+      font-size: 2.5rem !important;
     }
   }
   
@@ -456,7 +453,6 @@ fa-icon {
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 2.5rem !important;
     min-width: 170px !important;
-    height: 7rem;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
