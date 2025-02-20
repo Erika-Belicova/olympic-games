@@ -233,6 +233,11 @@ fa-icon {
 @media (min-width: 529px) and (min-height: 530px) {
   .container {
     height: 100%;
+    padding: 0px !important;
+  }
+
+  .detail {
+    padding: 0px !important;
   }
   
   h2 {
@@ -262,6 +267,7 @@ fa-icon {
     height: 50vh;
     max-width: 70vw;
     max-height: 70vh;
+    margin: 0px 20px 0px 20px !important;
   }
 
   ::ng-deep .pie-label {
@@ -290,6 +296,7 @@ fa-icon {
 @media (min-height: 530px) and (min-width: 768px) and (orientation: landscape) {
   .container {
     height: 100%;
+    padding: 0px !important;
   }
   
   .dashboard {
