@@ -47,7 +47,23 @@
         [yAxisTickFormatting]="formatValuesToString"
         [results]="lineChartData$ | async"
         [rotateXAxisTicks]="true"
-        [tooltipDisabled]="true">
+        [tooltipDisabled]="false">
+        <ng-template #tooltipTemplate let-model="model">
+          <div class="tooltip-text">
+            {{ model.name }}
+            <br>
+            <fa-icon [icon]="medalIcon"></fa-icon>{{ model.value }}
+          </div>
+        </ng-template>
+        <ng-template #seriesTooltipTemplate let-model="model">
+          <div class="tooltip-text">
+            <ng-container *ngFor="let item of model">
+              {{ item.name }}
+              <br>
+              <fa-icon [icon]="medalIcon"></fa-icon>{{ item.value }}
+            </ng-container>
+          </div>
+        </ng-template>
       </ngx-charts-line-chart>
       <ng-template #noDataChart>
         <p>No data available for the timeline chart.</p>

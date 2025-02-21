@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, catchError, delay, Observable, of, take, tap } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { faAward } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-detail',
@@ -31,6 +32,8 @@ export class DetailComponent implements OnInit {
   trimXAxisTicks: boolean = true;
   autoScale: boolean = true;
   rotateXAxisTicks: boolean = true;
+
+  medalIcon = faAward; // medal icon from awesome fonts
 
   constructor(private route: ActivatedRoute, 
               private olympicService: OlympicService,

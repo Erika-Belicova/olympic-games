@@ -89,6 +89,37 @@ h2 {
   }
 }
 
+::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+  background-color: #04838F !important;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.25rem !important;
+  padding: 0px 8px !important;
+  font-weight: 100;
+  min-width: 80px;
+  border-radius: 10px;
+  width: auto !important;
+  height: auto !important; 
+}
+
+::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+  border-top-width: 16px !important;
+  border-left-width: 16px !important;
+  border-right-width: 16px !important;
+  border-top-color: #04838F !important;
+}
+
+.tooltip-text {
+  text-align: center;
+}
+
+fa-icon {
+  display: inline-block !important;
+  font-size: 85%;
+  color:  #ffffff;
+  margin-right: 5px;
+}
+
 ::ng-deep .line-label {
   font-size: 1.5rem !important;
   line-height: 1.5;
@@ -171,6 +202,18 @@ button:hover {
     }
   }
 
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    min-width: 60px;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
+  }
+
   .line-label {
     font-size: 1rem !important;
   }
@@ -250,10 +293,9 @@ button:hover {
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1rem !important;
-    line-height: 1.4;
+    font-size: 1.2rem !important;
+    line-height: 1.5;
     min-width: 60px;
-    height: 3.8rem !important;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
@@ -332,6 +374,18 @@ button:hover {
     }
   }
 
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.5rem !important;
+    line-height: 1.4;
+    min-width: 100px;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px;
+    border-left-width: 12px;
+    border-right-width: 12px;
+  }
+
   .line-label-line {
     stroke-width: 2px;
   }
@@ -407,15 +461,19 @@ button:hover {
     }
   }
 
-  ::ng-deep .line-label {
-    font-size: 1.6rem;
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.5rem !important;
+    line-height: 1.5 !important;
+    min-width: 100px !important;
+    
+    .tooltip-caret.position-left {
+      border-top-color: white;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
   }
 
-  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1.25rem !important;
-    line-height: 1.4;
-    min-width: 100px;
-    height: 3.8rem;
+  ::ng-deep .line-label {
+    font-size: 1.6rem;
   }
 
   ::ng-deep .line-label-line {
@@ -491,14 +549,14 @@ button:hover {
     }
   }
 
-  ::ng-deep .line-label {
-    font-size: 2.5rem !important;
-  }
-
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 2rem !important;
+    line-height: 1.4;
     min-width: 150px !important;
-    height: 5.6rem;
+  }
+
+  ::ng-deep .line-label {
+    font-size: 2.5rem !important;
   }
 
   ::ng-deep .line-label-line {
@@ -576,21 +634,19 @@ button:hover {
     }
   }
 
-  ::ng-deep .line-label {
-    font-size: 2.8rem;
-  }
-
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 2rem;
-    line-height: 1.4;
-    min-width: 160px !important;
-    height: 6rem;
+    font-size: 2.5rem !important;
+    min-width: 170px !important;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
     border-top-width: 24px;
     border-left-width: 24px;
     border-right-width: 24px;
+  }
+
+  ::ng-deep .line-label {
+    font-size: 2.8rem;
   }
 
   ::ng-deep .line-label-line {
