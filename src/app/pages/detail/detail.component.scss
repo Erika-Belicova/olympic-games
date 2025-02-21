@@ -89,6 +89,37 @@ h2 {
   }
 }
 
+::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+  background-color: #04838F !important;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.25rem !important;
+  padding: 0px 8px !important;
+  font-weight: 100;
+  min-width: 80px;
+  border-radius: 10px;
+  width: auto !important;
+  height: auto !important; 
+}
+
+::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+  border-top-width: 16px !important;
+  border-left-width: 16px !important;
+  border-right-width: 16px !important;
+  border-top-color: #04838F !important;
+}
+
+.tooltip-text {
+  text-align: center;
+}
+
+fa-icon {
+  display: inline-block !important;
+  font-size: 85%;
+  color:  #ffffff;
+  margin-right: 5px;
+}
+
 ::ng-deep .line-label {
   font-size: 1.5rem !important;
   line-height: 1.5;
@@ -171,6 +202,18 @@ button:hover {
     }
   }
 
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1rem !important;
+    line-height: 1.4;
+    min-width: 60px;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
+  }
+
   .line-label {
     font-size: 1rem !important;
   }
@@ -189,7 +232,7 @@ button:hover {
 }
 
 // mobile landscape
-@media (max-height: 599px) and (min-width: 600px) and (orientation: landscape) {
+@media (max-height: 529px) and (min-width: 530px) and (orientation: landscape) {
   .container {
     flex: auto;
     overflow: hidden !important;
@@ -204,7 +247,9 @@ button:hover {
   
   h2 {
     font-size: 1.5rem !important;
-    margin: -5px auto 10px auto !important;
+    margin-bottom: 6px !important;
+    position: relative;
+    top: -6px;
   }
   
   .flex-container {
@@ -212,7 +257,7 @@ button:hover {
   }
   
   .info-container {
-    min-height: 2.6rem !important;
+    min-height: 2.3rem !important;
   
     h3 {
       font-size: 1rem;
@@ -225,26 +270,32 @@ button:hover {
 
   ::ng-deep .ng-star-inserted text {
     font-size: 1rem !important;
+    margin: 0px !important;
   }
   
   .line-chart-container {
     display: inline-block;
-    height: 30vh;
+    height: 10vh !important;
     width: 60vw;
     max-width: 70vw;
-    max-height: 50vh;
-    margin: 10px auto 0px auto;
+    max-height: 30vh;
+    margin: 5px 20px !important;
 
     h3 {
-      display: none !important;
+      font-size: 1rem !important;
+      color: #5B5B5B;
+      font-weight: 400;
+      margin: 0px !important;
+      padding: 0px !important;
+      position: relative;
+      top: -10px;
     }
   }
 
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1rem !important;
-    line-height: 1.4;
+    font-size: 1.2rem !important;
+    line-height: 1.5;
     min-width: 60px;
-    height: 3.8rem !important;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
@@ -258,7 +309,9 @@ button:hover {
     padding: 14px 20px;
     font-size: 1rem;
     height: 48px;
-    overflow: hidden;
+    margin: auto !important;
+    position: relative;
+    top: -5px;
   }
   
   button:hover {
@@ -267,15 +320,20 @@ button:hover {
 }
 
 // tablet portrait
-@media (min-width: 768px) and (max-width: 1024px) and (min-height: 600px) {
+@media (min-width: 529px) and (min-height: 530px) {
   .container {
     height: 100%;
+    padding: 0px !important;
+  }
+
+  .detail {
+    padding: 0px !important;
   }
   
   h2 {
     padding: 8px 10px 16px 10px;
     font-size: 2.5rem;
-    margin: 25px;
+    margin: 25px !important;
   }
   
   .flex-container {
@@ -287,11 +345,11 @@ button:hover {
     border-width: 2px;
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.5rem !important;
     }
   
     p {
-      font-size: 1.5rem;
+      font-size: 1.5rem !important;
     }
   }
 
@@ -316,26 +374,38 @@ button:hover {
     }
   }
 
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.5rem !important;
+    line-height: 1.4;
+    min-width: 100px;
+  }
+  
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
+    border-top-width: 12px;
+    border-left-width: 12px;
+    border-right-width: 12px;
+  }
+
   .line-label-line {
     stroke-width: 2px;
   }
 
   button {
-    margin: 20px auto;
+    margin: 20px auto 0px auto !important;
     border-radius: 10px;
-    padding: 16px 30px;
-    font-size: 1.5rem;
-    font-weight: 100;
+    padding: 12px 20px 16px 20px !important;
+    font-size: 1.25rem;
+    height: 48px;
+    text-align: center;
   }
   
   button:hover {
-    font-size: 1.5rem;
-    font-weight: 100;
+    font-size: 1.25rem;
   }
 }
 
 // tablet landscape
-@media (min-height: 600px) and (min-width: 600px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-height: 530px) and (min-width: 768px) and (orientation: landscape) {
   .container {
     overflow: hidden;
     height: 100%;
@@ -348,7 +418,8 @@ button:hover {
   
   h2 {
     padding: 8px 10px 16px 10px;
-    font-size: 2rem;
+    font-size: 2.5rem !important;
+    margin: 10px 20px 15px 20px !important;
   }
   
   .flex-container {
@@ -356,16 +427,16 @@ button:hover {
   }
 
   .info-container {
-    min-height: 3rem;
+    min-height: 3.8rem !important;
     border-width: 2px;
   
     h3 {
-      font-size: 1.25rem;
+      font-size: 1.5rem !important;
       line-height: 1.4;
     }
   
     p {
-      font-size: 1.25rem;
+      font-size: 1.5rem !important;
       line-height: 1.4;
     }
   }
@@ -379,10 +450,10 @@ button:hover {
     height: 40vh;
     max-width: 70vw;
     max-height: 80vh;
-    margin: 2rem auto;
+    margin: 1.2rem auto !important;
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #5B5B5B;
       font-weight: 400;
       margin: 0px !important;
@@ -390,15 +461,19 @@ button:hover {
     }
   }
 
-  ::ng-deep .line-label {
-    font-size: 1.6rem;
+  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
+    font-size: 1.5rem !important;
+    line-height: 1.5 !important;
+    min-width: 100px !important;
+    
+    .tooltip-caret.position-left {
+      border-top-color: white;
+      box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    }
   }
 
-  ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 1.25rem !important;
-    line-height: 1.4;
-    min-width: 100px;
-    height: 3.8rem;
+  ::ng-deep .line-label {
+    font-size: 1.6rem;
   }
 
   ::ng-deep .line-label-line {
@@ -406,7 +481,7 @@ button:hover {
   }
 
   button {
-    margin: 20px auto;
+    margin: 20px auto 0px auto !important;
     border-radius: 10px;
     padding: 20px 40px;
     font-size: 1.25rem;
@@ -420,7 +495,7 @@ button:hover {
 }
 
 // desktop
-@media (min-width: 1025px) and (max-width: 1599px) {
+@media (min-width: 1280px) and (max-width: 1599px) and (min-height: 768px) {
   .container {
     padding: 0px;
     height: 100%;
@@ -432,8 +507,8 @@ button:hover {
   
   h2 {
     padding: 8px 10px 20px 10px;
-    font-size: 3rem;
-    margin: 40px;
+    font-size: 3rem !important;
+    margin: 40px !important;
   }
   
   .flex-container {
@@ -446,11 +521,11 @@ button:hover {
     border-width: 3px;
   
     h3 {
-      font-size: 2rem;
+      font-size: 2rem !important;
     }
   
     p {
-      font-size: 2rem;
+      font-size: 2rem !important;
     }
   }
 
@@ -463,7 +538,7 @@ button:hover {
     height: 40vh;
     max-width: 70vw;
     max-height: 70vh;
-    margin: 3rem auto;
+    margin: 3rem auto 0rem auto !important;
 
     h3 {
       font-size: 2.5rem;
@@ -474,14 +549,14 @@ button:hover {
     }
   }
 
-  ::ng-deep .line-label {
-    font-size: 2.4rem !important;
-  }
-
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
     font-size: 2rem !important;
+    line-height: 1.4;
     min-width: 150px !important;
-    height: 5.6rem;
+  }
+
+  ::ng-deep .line-label {
+    font-size: 2.5rem !important;
   }
 
   ::ng-deep .line-label-line {
@@ -491,9 +566,10 @@ button:hover {
   button {
     margin: 30px auto;
     border-radius: 10px;
-    padding: 16px 30px;
-    font-size: 1.5rem;
+    padding: auto !important;
+    font-size: 1.5rem !important;
     font-weight: 100;
+    height: 56px !important;
   }
   
   button:hover {
@@ -503,7 +579,7 @@ button:hover {
 }
 
 // large desktop
-@media (min-width: 1600px) {
+@media (min-width: 1600px) and (min-height: 768px) {
   .container {
     padding: 0px;
     height: 100%;
@@ -515,8 +591,8 @@ button:hover {
   
   h2 {
     padding: 8px 10px 20px 10px;
-    font-size: 3.5rem;
-    margin: 40px;
+    font-size: 3.5rem !important;
+    margin: 25px !important;
   }
   
   .flex-container {
@@ -526,14 +602,14 @@ button:hover {
   .info-container {
     min-height: 6.5rem;
     padding: 10px 20px;
-    border-width: 4px;
+    border-width: 3px;
   
     h3 {
-      font-size: 2.5rem;
+      font-size: 2.5rem !important;
     }
   
     p {
-      font-size: 2.5rem;
+      font-size: 2.5rem !important;
     }
   }
   
@@ -546,7 +622,7 @@ button:hover {
     height: 45vh;
     max-width: 70vw;
     max-height: 60vh;
-    margin: 3.5rem auto;
+    margin: 2.5rem auto !important;
 
     h3 {
       font-size: 3rem;
@@ -558,15 +634,9 @@ button:hover {
     }
   }
 
-  ::ng-deep .line-label {
-    font-size: 2.8rem;
-  }
-
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip {
-    font-size: 2rem;
-    line-height: 1.4;
-    min-width: 160px !important;
-    height: 6rem;
+    font-size: 2.5rem !important;
+    min-width: 170px !important;
   }
   
   ::ng-deep .ngx-charts-tooltip-content.type-tooltip .tooltip-caret.position-top {
@@ -575,20 +645,25 @@ button:hover {
     border-right-width: 24px;
   }
 
+  ::ng-deep .line-label {
+    font-size: 2.8rem;
+  }
+
   ::ng-deep .line-label-line {
     stroke-width: 3px;
   }
 
   button {
-    margin: 20px auto 0px auto;
+    margin: 25px auto 10px auto !important;
     border-radius: 10px;
-    padding: 16px 30px;
-    font-size: 1.5rem;
+    padding: auto !important;
+    font-size: 1.5rem !important;
     font-weight: 100;
+    height: 56px !important;
   }
   
   button:hover {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     font-weight: 100;
   }
 }
