@@ -1,14 +1,14 @@
 <div class="container">
   <div class="detail">
     <div *ngIf="error$ | async as errorMessage" class="error-message">
-      {{ errorMessage }}
+      <p>{{ errorMessage }}</p>
     </div>
     <h2>{{ countryName }}</h2>
     <div class="flex-container">
       <div class="info-container">
         <h3>Number of entries</h3>
         <p *ngIf="numberOfEntries$ | async as numberOfEntries">{{ numberOfEntries }}</p>
-        <p *ngIf="error$ | async as error; else loadingEntries" class="error-message">No data</p>
+        <p *ngIf="error$ | async as errorMessage; else loadingEntries" class="error-message">No data</p>
         <ng-template #loadingEntries>
           <p *ngIf="loading$ && (numberOfEntries$ | async) == null">Loading...</p>
         </ng-template>
@@ -16,7 +16,7 @@
       <div class="info-container">
         <h3>Total number of medals</h3>
         <p *ngIf="numberOfMedals$ | async as numberOfMedals">{{ numberOfMedals }}</p>
-        <p *ngIf="error$ | async as error; else loadingMedals" class="error-message">No data</p>
+        <p *ngIf="error$ | async as errorMessage; else loadingMedals" class="error-message">No data</p>
         <ng-template #loadingMedals>
           <p *ngIf="loading$ && (numberOfMedals$ | async) == null">Loading...</p>
         </ng-template>
@@ -24,7 +24,7 @@
       <div class="info-container">
         <h3>Total number of athletes</h3>
         <p *ngIf="numberOfAthletes$ | async as numberOfAthletes">{{ numberOfAthletes }}</p>
-        <p *ngIf="error$ | async as error; else loadingAthletes" class="error-message">No data</p>
+        <p *ngIf="error$ | async as errorMessage; else loadingAthletes" class="error-message">No data</p>
         <ng-template #loadingAthletes>
           <p *ngIf="loading$ && (numberOfAthletes$ | async) == null">Loading...</p>
         </ng-template>
@@ -63,7 +63,7 @@
       </ngx-charts-line-chart>
       <ng-template #errorCheck>
         <div class="error-message">
-          <p *ngIf="error$ | async as error; else loadingLineChartData" class="error-message">No data available for the line chart.</p>
+          <p *ngIf="error$ | async as errorMessage; else loadingLineChartData" class="error-message">No data available for the line chart.</p>
         </div>
       </ng-template>
       <ng-template #loadingLineChartData>
