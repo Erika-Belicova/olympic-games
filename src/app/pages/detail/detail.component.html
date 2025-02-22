@@ -1,42 +1,38 @@
 <div class="container">
   <div class="detail">
-    <h2>{{ countryName }}</h2>
     <div *ngIf="error$ | async as errorMessage" class="error-message">
       {{ errorMessage }}
     </div>
+    <h2>{{ countryName }}</h2>
     <div class="flex-container">
       <div class="info-container">
         <h3>Number of entries</h3>
-        <ng-container *ngIf="numberOfEntries$ | async as numberOfEntries; else loadingEntries">
-          <p>{{ numberOfEntries }}</p>
-        </ng-container>
+        <p *ngIf="numberOfEntries$ | async as numberOfEntries">{{ numberOfEntries }}</p>
+        <p *ngIf="error$ | async as error; else loadingEntries" class="error-message">No data</p>
         <ng-template #loadingEntries>
-          <p>Loading...</p>
+          <p *ngIf="loading$ && (numberOfEntries$ | async) == null">Loading...</p>
         </ng-template>
       </div>
       <div class="info-container">
         <h3>Total number of medals</h3>
-        <ng-container *ngIf="numberOfMedals$ | async as numberOfMedals; else loadingMedals">
-          <p>{{ numberOfMedals }}</p>
-        </ng-container>
+        <p *ngIf="numberOfMedals$ | async as numberOfMedals">{{ numberOfMedals }}</p>
+        <p *ngIf="error$ | async as error; else loadingMedals" class="error-message">No data</p>
         <ng-template #loadingMedals>
-          <p>Loading...</p>
+          <p *ngIf="loading$ && (numberOfMedals$ | async) == null">Loading...</p>
         </ng-template>
       </div>
       <div class="info-container">
         <h3>Total number of athletes</h3>
-        <ng-container *ngIf="numberOfAthletes$ | async as numberOfAthletes; else loadingAthletes">
-          <p>{{ numberOfAthletes }}</p>
-        </ng-container>
+        <p *ngIf="numberOfAthletes$ | async as numberOfAthletes">{{ numberOfAthletes }}</p>
+        <p *ngIf="error$ | async as error; else loadingAthletes" class="error-message">No data</p>
         <ng-template #loadingAthletes>
-          <p>Loading...</p>
+          <p *ngIf="loading$ && (numberOfAthletes$ | async) == null">Loading...</p>
         </ng-template>
       </div>
     </div>
     <div class="line-chart-container">
-      <p *ngIf="(lineChartData$ | async)?.length === 0 || (numberOfEntries$ | async) === 0">No data available for the chart.</p>
       <ngx-charts-line-chart
-        *ngIf="(lineChartData$ | async)?.length !== 0 && (numberOfEntries$ | async) !== 0"
+        *ngIf="(lineChartData$ | async)?.length !== 0 && (numberOfEntries$ | async) !== 0; else errorCheck"
         [trimXAxisTicks]="true"
         [animations]="false"
         [scheme]="'cool'"
@@ -65,10 +61,17 @@
           </div>
         </ng-template>
       </ngx-charts-line-chart>
-      <ng-template #noDataChart>
-        <p>No data available for the timeline chart.</p>
+      <ng-template #errorCheck>
+        <div class="error-message">
+          <p *ngIf="error$ | async as error; else loadingLineChartData" class="error-message">No data available for the line chart.</p>
+        </div>
       </ng-template>
-      <h3 *ngIf="(lineChartData$ | async)?.length !== null">Dates</h3>
+      <ng-template #loadingLineChartData>
+        <div class="error-message">
+          <p *ngIf="loading$ && (lineChartData$ | async)?.length == 0">Loading...</p>
+        </div>
+      </ng-template>
+      <h3 *ngIf="(lineChartData$ | async)?.length !== 0 && (numberOfEntries$ | async) !== 0">Dates</h3>
     </div>
     <button [routerLink]="['/']">BACK</button>
   </div>
