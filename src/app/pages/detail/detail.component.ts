@@ -74,12 +74,27 @@ export class DetailComponent implements OnInit {
   
   // ensures the data is valid and handles invalid URLs by redirecting
   ensureValidOlympicsData(): void {
+    const currentUrl = this.router.url;
+    const previousUrl = localStorage.getItem('previousUrl');
+    let showError = false;
+
+    // store URL if manually changed
+    if (previousUrl && currentUrl !== previousUrl) {
+      localStorage.setItem('previousUrl', currentUrl);
+      showError = true;
+    }
+
+    // store current URL for refresh
+    localStorage.setItem('previousUrl', currentUrl);
+
     this.olympicService.getOlympics().pipe(take(1)).subscribe({
       next: (olympicsData) => { // check for existing country data
-        if (olympicsData === null) { 
+        if (olympicsData === null && showError == true) { 
           this.errorMessage ='Error: Redirection failed. Please use the buttons to navigate the application. ';
           this.showErrorSnackBar(this.errorMessage);
-          this.router.navigateByUrl('/not-found'); // navigate to not found page if no data
+          if (currentUrl !== previousUrl) {
+            this.router.navigateByUrl('/not-found'); // navigate to not found page if no data
+          }
           return;
         }
       },
