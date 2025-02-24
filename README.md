@@ -1,6 +1,6 @@
-# OlympicGamesStarter
+# Olympic Games
 
-A simple Angular application that displays Olympic data, such as the number of medals, athletes, and other statistics by country.
+A simple Angular application that displays Olympic Games data, such as the number of medals, athletes, and other statistics by country.
 
 ## Prerequisites
 
@@ -16,7 +16,7 @@ Before running the application, you need to have the following tools installed o
 Open your terminal or command prompt.
 Clone the GitHub repository of the project using the following command:
 
-git clone https://github.com/Erika-Belicova/Developpez-le-front-end-en-utilisant-Angular.git
+git clone https://github.com/Erika-Belicova/olympic-games.git
 Replace your-username and repository-name with your GitHub username and the project name, respectively.
 
 Navigate into the cloned project directory:

@@ -10,10 +10,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DetailComponent } from './pages/detail/detail.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NotFoundComponent, DetailComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgxChartsModule, FontAwesomeModule, BrowserAnimationsModule, MatSnackBarModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgxChartsModule, FontAwesomeModule, BrowserAnimationsModule, MatSnackBarModule, NoopAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
