@@ -1,30 +1,30 @@
 <div class="container">
   <div class="dashboard">
-    <h2>Medals per Country</h2>
     <div *ngIf="error$ | async as error" class="error-message">
       <p>{{ error }}</p>
     </div>
+    <h2>Medals per Country</h2>
     <div class="flex-container">
       <div class="information-container">
         <h3>Number of JOs</h3>
-        <p *ngIf="loading$ | async">Loading...</p>
-        <p *ngIf="!(loading$ | async) && (numberOfJOs$ | async) !== null">{{ (numberOfJOs$ | async) }}</p>
+        <p *ngIf="(numberOfJOs$ | async) !== null">{{ (numberOfJOs$ | async) }}</p>
+        <p *ngIf="error$ | async as error; else loadingNumberOfJOs" class="error-message">No data</p>
+        <ng-template #loadingNumberOfJOs>
+          <p *ngIf="loading$ && (numberOfJOs$ | async) == null">Loading...</p>
+        </ng-template>
       </div>
       <div class="information-container">
         <h3>Number of countries</h3>
-        <p *ngIf="loading$ | async">Loading...</p>
-        <p *ngIf="!(loading$ | async) && (olympics$ | async) as olympics; else loadingCountries">
-          {{ olympics?.length }}
-        </p>
-        <ng-template #loadingCountries>
-          <p>Loading...</p>
+        <p *ngIf="(olympics$ | async) !== null">{{ (olympics$ | async)?.length }}</p>
+        <p *ngIf="error$ | async as error; else loadingOlympics" class="error-message">No data</p>
+        <ng-template #loadingOlympics>
+          <p *ngIf="loading$ && (olympics$ | async) == null">Loading...</p>
         </ng-template>
       </div>
     </div>
     <div class="pie-chart-container">
-      <p *ngIf="loading$ | async">Loading chart data...</p>
       <ngx-charts-pie-chart
-      *ngIf="!(loading$ | async) && (pieChartData$ | async)?.length !== 0; else noDataChart"
+      *ngIf="(pieChartData$ | async)?.length !== 0; else errorCheck"
       [scheme]="colorScheme"
       [results]="pieChartData$ | async"
       [labels]="showLabels"
@@ -40,8 +40,15 @@
           </div>
         </ng-template>
       </ngx-charts-pie-chart>
-      <ng-template #noDataChart>
-        <p>No data available for the pie chart.</p>
+      <ng-template #errorCheck>
+        <div class="error-message">
+          <p *ngIf="error$ | async as error; else loadingPieChartData" class="error-message">No data available for the pie chart.</p>
+        </div>
+      </ng-template>
+      <ng-template #loadingPieChartData>
+        <div class="error-message">
+          <p *ngIf="loading$ && (pieChartData$ | async)?.length == 0">Loading...</p>
+        </div>
       </ng-template>
     </div>
   </div>
