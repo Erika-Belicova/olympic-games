@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { OlympicService } from 'src/app/core/services/olympic.service';
-import { OlympicCountry } from 'src/app/core/models/Olympic';
+import { OlympicCountry } from 'src/app/core/models/OlympicCountry';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { catchError, delay, tap } from 'rxjs/operators';
@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
   
   showErrorSnackBar(message: string): void {
     this.snackBar.open(message, 'Close', {
-      duration: 3000,
+      duration: 5000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
       panelClass: ['error-snackbar'],

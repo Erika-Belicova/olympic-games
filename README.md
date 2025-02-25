@@ -1,4 +1,4 @@
-# Olympic Games
+# Olympic Games Application
 
 A simple Angular application that displays Olympic Games data, such as the number of medals, athletes, and other statistics by country.
 
