@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap, map, finalize } from 'rxjs/operators';
-import { OlympicCountry } from '../models/Olympic';
+import { OlympicCountry } from '../models/OlympicCountry';
 import { Participation } from '../models/Participation';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -173,7 +173,7 @@ export class OlympicService {
         case 0:
           return 'No internet connection found. Please check your connection to the internet.';
         case 404:
-          return 'The data could not be found.';
+          return `${message} The data could not be found.`;
         case 500:
         case 502:
         case 503:
