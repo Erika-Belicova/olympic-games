@@ -70,5 +70,6 @@ Detail Page: Shows specific information about each country, such as the number o
 ## Troubleshooting
 
 If you encounter issues while starting the application, make sure you've installed all dependencies using npm install.
+Should there be an issue with npm install, try npm install --legacy-peer-deps before moving on to other options.
 Check for any compilation errors in the console; they will provide information on the issues to resolve.
 If there’s an error, an error message will appear at the top of the page.
